@@ -19,6 +19,17 @@ Function Invoke-MrkRequest{
     $Resource = $BaseUri + $Resource
     [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 
-    $result =  Invoke-RestMethod -Method $Method -Uri $Resource -Headers $header -Body $Body -ContentType "application/json"
+    try {
+        $result =  Invoke-RestMethod -Method $Method -Uri $Resource -Headers $header -Body $Body -ContentType "application/json"    
+    }
+    catch [Microsoft.PowerShell.Commands.HttpResponseException] {
+        # Check if a Solid Error is Present, otherwise return Status Code             
+        if($_.ErrorDetails.Message){
+            return Get-MrkError -ErrorMessage ($_.ErrorDetails.Message | ConvertFrom-Json).Errors
+        }else{
+            return Get-MrkError -ErrorMessage $_.Exception.Response.ReasonPhrase
+        }
+        
+    }    
     return $result
 }
