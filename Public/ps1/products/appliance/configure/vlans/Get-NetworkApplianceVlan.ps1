@@ -5,9 +5,15 @@ Function Get-NetworkApplianceVlan{
         [Parameter(Mandatory = $true)]
         [string]$NetworkId,        
         [Parameter(Mandatory = $true)]
-        [string]$VlanId
+        [string]$VlanId,
+        [switch]$AsJson
     )
     $url = "/networks/$($NetworkId)/appliance/vlans/$($VlanId)"
 
-    Invoke-MrkRequest -Method Get -Resource $url -AuthToken $AuthToken
+    if($AsJson){
+        Invoke-MrkRequest -Method Get -Resource $url -AuthToken $AuthToken | ConvertTo-Json -Depth 10
+    }else {
+        Invoke-MrkRequest -Method Get -Resource $url -AuthToken $AuthToken 
+    }
+    
 }
