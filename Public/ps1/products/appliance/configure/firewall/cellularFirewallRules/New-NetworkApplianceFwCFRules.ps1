@@ -37,7 +37,9 @@ The destination CIDR for the firewall rule.
 Boolean indicating whether syslog is enabled for the rule.
 
 .EXAMPLE
-PS C:\> New-NetworkApplianceFwCFRules -AuthToken "123456789abcdef" -NetworkId "N_1234567890abcdef" -Comment "Allow HTTP" -Policy "allow" -Protocol "tcp" -SrcPort "Any" -SrcCidr "Any" -DestPort "80" -DestCidr "192.168.1.0/24" -SyslogEnabled $false
+PS C:\> New-NetworkApplianceFwCFRules -AuthToken "123456789abcdef" -NetworkId "N_1234567890abcdef" 
+-Comment "Allow HTTP" -Policy "allow" -Protocol "tcp" -SrcPort "Any" -SrcCidr "Any" 
+-DestPort "80" -DestCidr "192.168.1.0/24" -SyslogEnabled $false
 Creates a new rule that allows HTTP traffic to the specified destination CIDR.
 
 #>

@@ -28,12 +28,9 @@ Function Copy-NetworkApplianceVlan{
     $url = $urlNewVlan
 
     Write-Output $newVlan
-    if ($PSCmdlet.ShouldProcess("Target", "Operation")) {
+    if ($PSCmdlet.ShouldProcess("Copy VLAN", "Copy VLAN: $($VlanId) to VLAN: $($NewVlanId)")) {
         Invoke-MrkRequest -Method Post -Resource $url -AuthToken $AuthToken -Body ($newVlan | ConvertTo-Json)    
     }
-    
-    
-
 }
 
 <#
