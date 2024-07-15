@@ -1,5 +1,4 @@
-Function Get-MerakiNetworkClients{
-    [CmdletBinding(SupportsShouldProcess)] 
+Function Get-NetworkApplianceFwOneToManyNatRules {
     param(
         [Parameter(Mandatory = $true)]
         [string]$AuthToken,
@@ -9,7 +8,7 @@ Function Get-MerakiNetworkClients{
     $header = @{
         "Authorization" = "Bearer $($AuthToken)"
     }
-    $url = $ApiBaseUrl + "/networks/$($NetworkId)/clients"
+    $url = $ApiBaseUrl + "/networks/$($NetworkId)/appliance/firewall/oneToManyNatRules"   
 
     $result = Invoke-RestMethod -Method Get -Uri $url -Headers $header 
     return $result
