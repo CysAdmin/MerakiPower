@@ -4,7 +4,7 @@ A PowerShell module for interacting with the Cisco Meraki Dashboard API. This mo
 
 ## Overview
 
-This module provides cmdlets for common operations with Cisco Meraki's API, including managing networks, devices, clients, and firewall rules.
+This module provides cmdlets for common operations with Cisco Meraki's API, including managing networks and firewall rules.
 
 ## Contribution
 
