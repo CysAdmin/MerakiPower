@@ -43,15 +43,15 @@ Get-MrkOrganizationNetworks -AuthToken $authToken -OrganizationId $organizationI
 ## Add a new inbound firewall rule
 ```powershell
 $arguments = @{
-    AuthToken =   $AuthToken
-    NetworkId =   {your_network_id}
-    Comment   =   "Allow HTTPS"
-    Policy    =    "Allow"
-    Protocol  =    "TCP"
-    SrcPort   =    "Any"
-    SrcCidr   =    "Any"
-    DestPort  =    "443"
-    DestCidr  =    "Any"
+    AuthToken     =   $AuthToken
+    NetworkId     =   {your_network_id}
+    Comment       =   "Allow HTTPS"
+    Policy        =    "Allow"
+    Protocol      =    "TCP"
+    SrcPort       =    "Any"
+    SrcCidr       =    "Any"
+    DestPort      =    "443"
+    DestCidr      =    "Any"
     SyslogEnabled = $false
 }
 Add-NetworkApplianceL3InboundFirewallRule @arguments
