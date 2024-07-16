@@ -1,7 +1,7 @@
 # PowerShell Meraki Module
 
-A PowerShell module for interacting with the Cisco Meraki Dashboard API. This module allows you to manage various aspects of your Meraki network using PowerShell cmdlets.
-Whats the difference to Modules like https://github.com/DocNougat/Meraki-Powershell-Module/ ? Nothing
+A PowerShell module for interacting with the Cisco Meraki Dashboard API. This module allows you to manage various aspects of your Meraki network using PowerShell cmdlets.<br>
+Whats the difference to Modules like [Meraki-Powershell-Modul](https://github.com/DocNougat/Meraki-Powershell-Module/) ? <br>Nothing
 Every Developer knows it, if its not made by yourself its not made by yourself ;)
 
 ## Overview
