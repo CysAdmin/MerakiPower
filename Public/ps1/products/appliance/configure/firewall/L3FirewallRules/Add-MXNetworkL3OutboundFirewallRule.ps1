@@ -52,7 +52,7 @@ This example adds a firewall rule to allow HTTPS traffic to the specified destin
 
 .NOTES
 The SrcCidr and DestCidr parameters can also accept VLAN IDs in the format VLAN(1).*
-Set multiple SrcCidr and DestCidr with -SrcCidr "VLAN(1).*,VLAN(2).*,10.10.4.2"
+Set multiple SrcCidr and DestCidr with -SrcCidr "VLAN(1).*,VLAN(2).*"
 #>
 Function Add-MXNetworkL3OutboundFirewallRule{
     [CmdletBinding(SupportsShouldProcess, ConfirmImpact = "HIGH")]
