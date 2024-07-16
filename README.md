@@ -52,7 +52,7 @@ $arguments = @{
     SrcCidr       =    "Any"
     DestPort      =    "443"
     DestCidr      =    "Any"
-    SyslogEnabled = $false
+    SyslogEnabled =    $false
 }
 Add-NetworkApplianceL3InboundFirewallRule @arguments
 ```
