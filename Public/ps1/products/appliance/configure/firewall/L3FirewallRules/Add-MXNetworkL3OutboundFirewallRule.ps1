@@ -26,12 +26,14 @@ The source port for the firewall rule.
 
 .PARAMETER SrcCidr
 The source CIDR block or VLAN ID in the format VLAN(ID).*
+Set multiple SrcCidr with -SrcCidr "VLAN(1).*,VLAN(2).*,10.10.4.2"
 
 .PARAMETER DestPort
 The destination port for the firewall rule.
 
 .PARAMETER DestCidr
 The destination CIDR block or VLAN ID in the format VLAN(ID).*
+Set multiple SrcCidr with -DestCidr "VLAN(1).*,VLAN(2).*,10.10.4.2"
 
 .PARAMETER SyslogEnabled
 Boolean value to enable or disable syslog for the firewall rule.
@@ -50,6 +52,7 @@ This example adds a firewall rule to allow HTTPS traffic to the specified destin
 
 .NOTES
 The SrcCidr and DestCidr parameters can also accept VLAN IDs in the format VLAN(1).*
+Set multiple SrcCidr and DestCidr with -SrcCidr "VLAN(1).*,VLAN(2).*,10.10.4.2"
 #>
 Function Add-MXNetworkL3OutboundFirewallRule{
     [CmdletBinding(SupportsShouldProcess, ConfirmImpact = "HIGH")]
@@ -78,7 +81,7 @@ Function Add-MXNetworkL3OutboundFirewallRule{
         srcCidr = $SrcCidr
         syslogEnabled = $SyslogEnabled
     }
-    $Rules = Get-NetworkApplianceL3OutboundFirewallRules -AuthToken $AuthToken -NetworkId $NetworkId
+    $Rules = Get-MXNetworkL3OutboundFirewallRules -AuthToken $AuthToken -NetworkId $NetworkId
     # Remove the Default rule, as it will be added as an extra rule. Default is always present
     [object[]]$Rules.rules = $Rules.rules | Where-Object {$_.comment -ne "Default rule"}
 
