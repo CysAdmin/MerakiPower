@@ -109,7 +109,7 @@ Function Add-MXNetworkL3OutboundFirewallRule{
     if($Rules.rules.Count -eq 1){
         $Rules.rules = @($Rules.rules)
     }
-    Write-Output $Rules.rules
+    Write-Output $Rules.rules | Format-Table
     if ($PSCmdlet.ShouldProcess("Appliance CF Firewall Rules", "Update")) {
         Invoke-MrkRequest -Method Put -Resource $url -AuthToken $AuthToken -Body ( $Rules | ConvertTo-Json)     
     }

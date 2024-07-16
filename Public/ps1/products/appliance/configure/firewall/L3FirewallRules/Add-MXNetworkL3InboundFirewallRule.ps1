@@ -106,7 +106,7 @@ Function Add-MXNetworkL3InboundFirewallRule{
 
     # Remove syslogDefaultRule Property since it's an optional parameter
     $Rules.PSObject.Properties.Remove('syslogDefaultRule')
-    Write-Output $Rules.rules
+    Write-Output $Rules.rules | Format-Table
     if ($PSCmdlet.ShouldProcess("Appliance Firewall Rules", "Update")) {
         Invoke-MrkRequest -Method Put -Resource $url -AuthToken $AuthToken -Body ($Rules | ConvertTo-Json)     
     }
