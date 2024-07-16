@@ -1,6 +1,6 @@
 <#
 .SYNOPSIS
-Retrieves the Layer 3 inbound firewall rules for a specified network.
+Retrieves the Layer 3 inbound firewall rules for a specified MX network.
 
 .DESCRIPTION
 This function fetches the current Layer 3 inbound firewall rules configured for a given network in the Meraki dashboard.
@@ -18,7 +18,7 @@ Get-NetworkApplianceL3InboundFirewallRules -AuthToken $ApiKey -NetworkId $Networ
 This example retrieves the Layer 3 inbound firewall rules for the specified network.
 
 #>
-Function Get-NetworkApplianceL3InboundFirewallRules{
+Function Get-MXNetworkL3InboundFirewallRules{
     param(
         [Parameter(Mandatory = $true)]
         [string]$AuthToken,

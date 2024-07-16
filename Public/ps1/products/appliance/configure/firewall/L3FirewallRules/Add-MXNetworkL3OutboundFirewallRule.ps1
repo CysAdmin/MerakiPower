@@ -1,6 +1,6 @@
 <#
 .SYNOPSIS
-Adds a new Layer 3 Outbound firewall rule to a specified network.
+Adds a new Layer 3 Outbound firewall rule to a specified MX network.
 
 .DESCRIPTION
 This function adds a new Layer 3 Outbound firewall rule to a specified network in the Meraki dashboard. 
@@ -51,7 +51,7 @@ This example adds a firewall rule to allow HTTPS traffic to the specified destin
 .NOTES
 The SrcCidr and DestCidr parameters can also accept VLAN IDs in the format VLAN(1).*
 #>
-Function Add-NetworkApplianceL3OutboundFirewallRule{
+Function Add-MXNetworkL3OutboundFirewallRule{
     [CmdletBinding(SupportsShouldProcess, ConfirmImpact = "HIGH")]
     param(
         [Parameter(Mandatory = $true)]
