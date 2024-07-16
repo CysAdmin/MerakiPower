@@ -53,7 +53,7 @@ Function Add-MXNetworkL3InboundFirewallRule{
         [Parameter(Mandatory = $true)][ValidateNotNullOrEmpty()][string]$NetworkId,
         [Parameter(Mandatory = $true)][ValidateNotNullOrEmpty()][string]$Comment,
         [Parameter(Mandatory = $true)][ValidateSet("deny", "allow")][string]$Policy,
-        [Parameter(Mandatory = $true)][ValidateSet("tcp", "udp")][string]$Protocol,
+        [Parameter(Mandatory = $true)][ValidateSet("tcp", "udp", "icmp", "any")][string]$Protocol,
         [Parameter(Mandatory = $true)][ValidateNotNullOrEmpty()][string]$SrcPort,
         [Parameter(Mandatory = $true)][ValidateNotNullOrEmpty()][string]$SrcCidr,
         [Parameter(Mandatory = $true)][ValidateNotNullOrEmpty()][string]$DestPort,
