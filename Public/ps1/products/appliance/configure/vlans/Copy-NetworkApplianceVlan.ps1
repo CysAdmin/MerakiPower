@@ -1,3 +1,38 @@
+<#
+.SYNOPSIS
+Copies an existing VLAN configuration to a new VLAN on the network appliance.
+
+.DESCRIPTION
+This function copies the configuration of an existing VLAN and creates a new VLAN with the specified parameters. 
+It allows the user to define a new VLAN name, ID, subnet, and interface IP for the new VLAN.
+
+.PARAMETER AuthToken
+The authentication token for accessing the Meraki API.
+
+.PARAMETER NetworkId
+The unique identifier of the network containing the VLAN.
+
+.PARAMETER VlanId
+The unique identifier of the VLAN to be copied.
+
+.PARAMETER NewVlanName
+The name for the new VLAN.
+
+.PARAMETER NewVlanId
+The unique identifier for the new VLAN.
+
+.PARAMETER NewVlanSubnet
+The subnet for the new VLAN.
+
+.PARAMETER NewVlanInterfaceIp
+The interface IP for the new VLAN.
+
+.EXAMPLE
+Copy-NetworkApplianceVlan -AuthToken $ApiKey -NetworkId $NetworkId -VlanId 1 -NewVlanName "New VLAN" -NewVlanId 2 -NewVlanSubnet "192.168.2.0/24" -NewVlanInterfaceIp "192.168.2.1"
+
+This example copies the VLAN with ID 1 to a new VLAN with the specified parameters in the given network.
+
+#>
 Function Copy-NetworkApplianceVlan{    
     [CmdletBinding(SupportsShouldProcess, ConfirmImpact = "HIGH")] 
     param(
@@ -15,7 +50,6 @@ Function Copy-NetworkApplianceVlan{
         [string]$NewVlanSubnet,
         [Parameter(Mandatory = $true)]
         [string]$NewVlanInterfaceIp
-        
     )
     $url = "/networks/$($NetworkId)/appliance/vlans/$($VlanId)"
     $urlNewVlan = "/networks/$($NetworkId)/appliance/vlans/"
@@ -32,6 +66,7 @@ Function Copy-NetworkApplianceVlan{
         Invoke-MrkRequest -Method Post -Resource $url -AuthToken $AuthToken -Body ($newVlan | ConvertTo-Json)    
     }
 }
+
 
 <#
     "id": "1234",
