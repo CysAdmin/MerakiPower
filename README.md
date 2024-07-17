@@ -83,10 +83,10 @@ Add-MXNetworkL3InboundFirewallRule @arguments
   - Retrieves information about Meraki organizations.
 
 - **Get-MXNetworkL3InboundFirewallRules**
-  - Retrieves inbound firewall rules for MX network devices.
+  - Retrieves inbound firewall rules for MX network.
 
 - **Get-MXNetworkL3OutboundFirewallRules**
-  - Retrieves outbound firewall rules for MX network devices.
+  - Retrieves outbound firewall rules for MX network.
 
 - **Get-NetworkApplianceFwCFRules**
   - Retrieves cellular firewall rules for a network appliance.
