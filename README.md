@@ -27,7 +27,7 @@ cd MerakiPower
 Import-Module ./MerakiPower.psd1
 ```
 
-# Usage
+# Examle Usage
 ## Get a list of organizations
 ```powershell
 $authToken = "your_meraki_api_key"
