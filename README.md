@@ -27,7 +27,7 @@ cd MerakiPower
 Import-Module ./MerakiPower.psd1
 ```
 
-# Usage
+# Examle Usage
 ## Get a list of organizations
 ```powershell
 $authToken = "your_meraki_api_key"
@@ -54,7 +54,7 @@ $arguments = @{
     DestCidr      =    "Any"
     SyslogEnabled =    $false
 }
-Add-NetworkApplianceL3InboundFirewallRule @arguments
+Add-MXNetworkL3InboundFirewallRule @arguments
 ```
 ## Function Overview
 
@@ -83,10 +83,10 @@ Add-NetworkApplianceL3InboundFirewallRule @arguments
   - Retrieves information about Meraki organizations.
 
 - **Get-MXNetworkL3InboundFirewallRules**
-  - Retrieves inbound firewall rules for MX network devices.
+  - Retrieves inbound firewall rules for MX network.
 
 - **Get-MXNetworkL3OutboundFirewallRules**
-  - Retrieves outbound firewall rules for MX network devices.
+  - Retrieves outbound firewall rules for MX network.
 
 - **Get-NetworkApplianceFwCFRules**
   - Retrieves cellular firewall rules for a network appliance.
