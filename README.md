@@ -54,7 +54,7 @@ $arguments = @{
     DestCidr      =    "Any"
     SyslogEnabled =    $false
 }
-Add-NetworkApplianceL3InboundFirewallRule @arguments
+Add-MXNetworkL3InboundFirewallRule @arguments
 ```
 ## Function Overview
 
